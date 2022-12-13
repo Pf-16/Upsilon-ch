@@ -11,7 +11,7 @@ ExamModeActive = "Réactiver le mode examen"
 ToDeactivateExamMode1 = "Pour désactiver le mode examen,"
 ToDeactivateExamMode2 = "brancher la calculatrice à un"
 ToDeactivateExamMode3 = "ordinateur ou à une prise de courant."
-# --------------------- Please do not edit these messages ---------------------
+# --------------------- Please edit these messages ---------------------
 ExamModeWarning1 = ""
 ExamModeWarning2 = ""
 ExamModeWarning3 = ""
