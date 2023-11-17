@@ -439,7 +439,7 @@ First, install gint and fxsdk along with a cross compiler for the calculator. Th
 
 Next:
 ```bash
-git clone --recursive https://github.com/UpsilonNumworks/Upsilon.git
+git clone --recursive https://github.com/Pf-16/Upsilon-ch.git
 cd Omega
 git checkout upsilon-dev
 make PLATFORM=simulator TARGET=fxcg -j$(nproc)
