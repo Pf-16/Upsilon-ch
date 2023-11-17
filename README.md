@@ -249,7 +249,7 @@ You can now go to step 2!
 Clone repo and use 'upsilon-dev' branch by pasting these two commands:
 
 ```bash
-git clone --recursive https://github.com/UpsilonNumworks/Upsilon.git
+git clone --recursive https://github.com/Pf-16/Upsilon-ch.git
 cd Upsilon
 git checkout upsilon-dev
 ```
@@ -416,7 +416,7 @@ The simulator is now in `output/release/simulator/web/simulator.zip`
 You need devkitPro and devkitARM installed and in your path (instructions [here](https://devkitpro.org/wiki/Getting_Started))
 
 ```bash
-git clone --recursive https://github.com/UpsilonNumworks/Upsilon.git
+git clone --recursive https://github.com/Pf-16/Upsilon-ch.git
 cd Upsilon
 git checkout upsilon-dev
 make PLATFORM=simulator TARGET=3ds -j(nproc)
