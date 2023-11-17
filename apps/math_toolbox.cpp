@@ -38,7 +38,8 @@ const ToolboxMessageTree complexChildren[] = {
 
 const ToolboxMessageTree combinatoricsChildren[] = {
   ToolboxMessageTree::Leaf(I18n::Message::BinomialCommandWithArg, I18n::Message::Combination),
-  ToolboxMessageTree::Leaf(I18n::Message::PermuteCommandWithArg, I18n::Message::Permutation)
+  ToolboxMessageTree::Leaf(I18n::Message::PermuteCommandWithArg, I18n::Message::Permutation),
+  ToolboxMessageTree::Leaf(I18n::Message::FactorialCommandWithArg, I18n::Message::Factorial)
 };
 
 const ToolboxMessageTree normalDistributionChildren[] = {
@@ -67,13 +68,10 @@ const ToolboxMessageTree arithmeticChildren[] = {
 };
 
 const ToolboxMessageTree matricesChildren[] = {
-  ToolboxMessageTree::Leaf(I18n::Message::MatrixCommandWithArg, I18n::Message::NewMatrix, false, I18n::Message::MatrixCommand),
-  ToolboxMessageTree::Leaf(I18n::Message::IndentityCommandWithArg, I18n::Message::Identity),
-  ToolboxMessageTree::Leaf(I18n::Message::InverseCommandWithArg, I18n::Message::Inverse),
   ToolboxMessageTree::Leaf(I18n::Message::DeterminantCommandWithArg, I18n::Message::Determinant),
-  ToolboxMessageTree::Leaf(I18n::Message::TransposeCommandWithArg, I18n::Message::Transpose),
+  ToolboxMessageTree::Leaf(I18n::Message::InverseCommandWithArg, I18n::Message::Inverse),
+  ToolboxMessageTree::Leaf(I18n::Message::IndentityCommandWithArg, I18n::Message::Identity),
   ToolboxMessageTree::Leaf(I18n::Message::TraceCommandWithArg, I18n::Message::Trace),
-  ToolboxMessageTree::Leaf(I18n::Message::DimensionCommandWithArg, I18n::Message::Dimension),
   ToolboxMessageTree::Leaf(I18n::Message::RowEchelonFormCommandWithArg, I18n::Message::RowEchelonForm),
   ToolboxMessageTree::Leaf(I18n::Message::ReducedRowEchelonFormCommandWithArg, I18n::Message::ReducedRowEchelonForm)
 };
@@ -82,6 +80,14 @@ const ToolboxMessageTree vectorsChildren[] = {
   ToolboxMessageTree::Leaf(I18n::Message::DotCommandWithArg, I18n::Message::Dot),
   ToolboxMessageTree::Leaf(I18n::Message::CrossCommandWithArg, I18n::Message::Cross),
   ToolboxMessageTree::Leaf(I18n::Message::NormVectorCommandWithArg, I18n::Message::NormVector),
+};
+
+const ToolboxMessageTree matricesAndVectorsChildren[] = {
+  ToolboxMessageTree::Leaf(I18n::Message::MatrixCommandWithArg, I18n::Message::NewMatrix, false, I18n::Message::MatrixCommand),
+  ToolboxMessageTree::Leaf(I18n::Message::TransposeCommandWithArg, I18n::Message::Transpose),
+  ToolboxMessageTree::Leaf(I18n::Message::DimensionCommandWithArg, I18n::Message::Dimension),
+  ToolboxMessageTree::Node(I18n::Message::Matrices, matricesChildren),
+  ToolboxMessageTree::Node(I18n::Message::Vectors, vectorsChildren)
 };
 
 #if LIST_ARE_DEFINED
@@ -849,6 +855,10 @@ const ToolboxMessageTree Physics[] = {
 
 
 const ToolboxMessageTree menu[] = {
+  #ifdef _FXCG
+  // There is no factorial button on the fx-CG calculators
+  ToolboxMessageTree::Leaf(I18n::Message::FactorialCommandWithArg, I18n::Message::Factorial, false, I18n::Message::FactorialCommand),
+  #endif
   ToolboxMessageTree::Leaf(I18n::Message::AbsCommandWithArg, I18n::Message::AbsoluteValue),
   ToolboxMessageTree::Leaf(I18n::Message::RootCommandWithArg, I18n::Message::NthRoot),
   ToolboxMessageTree::Leaf(I18n::Message::LogCommandWithArg, I18n::Message::BasedLogarithm),
@@ -856,9 +866,8 @@ const ToolboxMessageTree menu[] = {
   ToolboxMessageTree::Node(I18n::Message::ComplexNumber, complexChildren),
   ToolboxMessageTree::Node(I18n::Message::Unit, unitChildren),
   ToolboxMessageTree::Node(I18n::Message::Arithmetic, arithmeticChildren),
-  ToolboxMessageTree::Node(I18n::Message::Matrices, matricesChildren),
+  ToolboxMessageTree::Node(I18n::Message::MatricesAndVectors, matricesAndVectorsChildren),
   ToolboxMessageTree::Node(I18n::Message::Probability, probabilityChildren),
-  ToolboxMessageTree::Node(I18n::Message::Vectors, vectorsChildren),
 #if LIST_ARE_DEFINED
   ToolboxMessageTree::Node(I18n::Message::Lists,listsChildren),
 #endif
