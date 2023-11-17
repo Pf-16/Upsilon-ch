@@ -9,7 +9,7 @@
 
 > Vous ne comprenez pas l'anglais ? Vous êtes francophone ? Regardez le [*LISEZ-MOI* français](./README.fr.md) !
 
-## NE MARCHE PAS/DOES NOT WORK. THIS IS ONLY FOR TESTING PURPOSES
+## Might work
 
 ## About
 
